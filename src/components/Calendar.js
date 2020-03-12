@@ -1,5 +1,7 @@
 import React from 'react';
-import './Calendar.scss'
+import { Scheduler, DayView, Appointments } from '@devexpress/dx-react-scheduler-material-ui';
+
+import './Calendar.scss';
 
 function Calendar() {
   return (
