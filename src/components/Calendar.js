@@ -1,5 +1,6 @@
 import React from 'react';
-import './Calendar.scss'
+
+import './Calendar.scss';
 
 function Calendar() {
   return (
@@ -9,4 +10,5 @@ function Calendar() {
   )
 }
 
-export default Calendar;
+ export default Calendar;
+

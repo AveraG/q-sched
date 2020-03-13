@@ -2,12 +2,13 @@ import React from 'react';
 import './App.css';
 import Backlog from './components/Backlog'
 import Calendar from './components/Calendar'
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       HEADER
+      <header>
+       <Header />
       </header>
       <body className='Grid-body'>
         <div className='Calendar'>
