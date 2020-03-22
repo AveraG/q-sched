@@ -1,11 +1,9 @@
-.App {
-  background-color: #282c34;
-  height: 100vh;
+body {
+  background-color: #373d47;
 }
 
-.Grid-body {
-  color: black;
-  font-size: 2em;
+.Grid-body { 
+  /* font-size: 2em; */
   display: grid;
   grid-template-columns: 3fr 1.5fr;
   grid-column-gap: 1em;
