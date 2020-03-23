@@ -1,9 +1,9 @@
 .Header {
-  background-color: #282c34;
+  background-color: #282c34; //create variable
   min-height: 7vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 2vmin); //variable font size larger
   color: white;
 }
