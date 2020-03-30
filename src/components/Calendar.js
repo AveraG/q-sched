@@ -1,51 +1,70 @@
-import React, { Component } from 'react';
-//import { render } from 'react-dom';
+import React from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
-//import './month.scss';
 import './styles.scss';
 import events from '../events'
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
+import HTML5Backend from "react-dnd-html5-backend";
+import { DragDropContext } from "react-dnd";
 
+
+
+const DragAndDropCalendar = withDragAndDrop(Calendar);
 const localizer = momentLocalizer(moment);
-const DnDCalendar = withDragAndDrop(Calendar)
 
-class MyCalendar extends Component {
-  constructor() {
-    super();
+class Dnd extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      name: 'React',
-      events: events //this needs to look like events:[]
+      events: events
     };
+
+    this.moveEvent = this.moveEvent.bind(this);
   }
 
-  onEventResize = (type, { event, start, end, allDay }) => {
-    this.setState(state => {
-      state.events[0].start = start;
-      state.events[0].end = end;
-      return { events: state.events };
+  moveEvent({ event, start, end }) {
+    const { events } = this.state;
+
+    const idx = events.indexOf(event);
+    const updatedEvent = { ...event, start, end };
+
+    const nextEvents = [...events];
+    nextEvents.splice(idx, 1, updatedEvent);
+
+    this.setState({
+      events: nextEvents
+    });
+  }
+
+  resizeEvent = (resizeType, { event, start, end }) => {
+    const { events } = this.state;
+
+    const nextEvents = events.map(existingEvent => {
+      return existingEvent.id === event.id
+        ? { ...existingEvent, start, end }
+        : existingEvent;
+    });
+
+    this.setState({
+      events: nextEvents
     });
   };
 
-  onEventDrop = ({ event, start, end, allDay }) => {
-    console.log(start);
-  };
-  //component did mount to fetch events and set state [setState: events:events]
-
   render() {
     return (
-      <DnDCalendar
-      defaultDate={moment().toDate()}
-      defaultView="month"
-      events={this.state.events}
-      localizer={localizer}
-      onEventDrop={this.onEventDrop}
-      onEventResize={this.onEventResize}
-      resizable
-      style={{ height: "100vh" }}
-    />
+      <DragAndDropCalendar
+        selectable
+        events={this.state.events}
+        onEventDrop={this.moveEvent}
+        resizable
+        onEventResize={this.resizeEvent}       
+        localizer={localizer}
+        defaultView="month"
+      />
     );
   }
 }
 
-export default MyCalendar;
+const MyCalendar = DragDropContext(HTML5Backend)(Dnd);
+
+export default MyCalendar
