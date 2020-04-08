@@ -10,8 +10,8 @@
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-big-calendar": "^0.22.0",
-    "react-dnd": "7.4.5",
-    "react-dnd-html5-backend": "7.4.4",
+    "react-dnd": "^10.0.2",
+    "react-dnd-html5-backend": "^10.0.2",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
   },

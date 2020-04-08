@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Backlog.scss';
 import ListItem from './ListItem';
-//import { tsPropertySignature } from '@babel/types';
+
 
 
 function Backlog() {
