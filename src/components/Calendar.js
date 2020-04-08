@@ -4,8 +4,7 @@ import moment from 'moment';
 import './styles.scss';
 import events from '../events'
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
-import HTML5Backend from "react-dnd-html5-backend";
-import { DragDropContext } from "react-dnd";
+
 
 
 
@@ -65,6 +64,6 @@ class Dnd extends React.Component {
   }
 }
 
-const MyCalendar = DragDropContext(HTML5Backend)(Dnd);
 
-export default MyCalendar
+
+export default Dnd;
