@@ -4,7 +4,7 @@ import moment from 'moment';
 import './styles.scss';
 import events from '../events'
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
-import HTML5Backend from "react-dnd-html5-backend";
+//import HTML5Backend from "react-dnd-html5-backend";
 //import { DnDProvider } from "react-dnd";
 
 
