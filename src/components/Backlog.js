@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import './Backlog.scss';
 import ListItem from './ListItem';
 
-
-
-function Backlog() {
+function Backlog({ name, type }) {
+  
   const [todos, setTodos] = useState([
     {
       content: 'Feed dog',

@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { DragSource, DropTarget } from 'react-dnd';
+import ItemTypes from './ItemTypes';
 
-function ListItem({todo, toggle, handleKeyDown, updateTodo, i}) {
+const Item = ({ text, isDragging, connectDragSource, connectDropTarget }) => {
+  const opacity = isDragging ? 0 : 1
+  const ref = useRef(null)
+  connectDragSource(ref)
+  connectDropTarget(ref)
+  return (
+    <div ref={ref} style={{ opacity }}>
+      {text}
+    </div>
+  )
+}
+
+ function ListItem({todo, toggle, handleKeyDown, updateTodo, i}) {
+//   const [collectedProps, drag] = useDrag({
+//     item: { id, type }
+//   })
     
     return(
     <div className={`todo ${todo.isComlpleted && 'todo-is-completed'}`}>
