@@ -10,7 +10,9 @@ function App() {
   return (
     <div className="App">
        <Header />
+       <div id='modal-root'>
        <ModalButton />
+       </div>
       <body className='Grid-body'>
           <MyCalendar />
           <Backlog />
