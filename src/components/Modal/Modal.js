@@ -10,6 +10,8 @@ const Modal = ({ children }) => (
   )
 );
 
+export default Modal;
+
 // const App = () => (
 //   <p>
 //     Click to reveal a secret:
