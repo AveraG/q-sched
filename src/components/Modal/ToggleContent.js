@@ -14,3 +14,4 @@ const ToggleContent = ({ toggle, content }) => {
   );
 }
 
+export default ToggleContent;
