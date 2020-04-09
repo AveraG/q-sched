@@ -3,19 +3,17 @@ import Modal from './Modal'
 import ToggleContent from './ToggleContent'
 
 const ModalButton = () => (
-  <p>
-    Click to reveal a secret:
-
+  <div>
     <ToggleContent
-      toggle={show => <button onClick={show}>Open</button>}
+      toggle={show => <button onClick={show}>Edit</button>} //eventually pass props
       content={hide => (
         <Modal>
-          There is no spoon.<br/>
+          Edit Here<br/>
           <button onClick={hide}>Close</button>
         </Modal>
       )}
     />
-  </p>
+  </div>
 );
 
 export default ModalButton;
