@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 
 const Modal = ({ children }) => (
   ReactDOM.createPortal(
-    <div className="modal">
+    <aside className="modal">
       {children}
-    </div>,
-    document.getElementById('modal-root')
+    </aside>,
+    document.body
   )
 );
 
