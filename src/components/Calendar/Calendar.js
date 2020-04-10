@@ -2,7 +2,7 @@ import React from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import './styles.scss';
-import events from '../events'
+import events from '../../events'
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 
 const DragAndDropCalendar = withDragAndDrop(Calendar);

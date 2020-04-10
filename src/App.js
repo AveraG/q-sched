@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.scss';
 import Backlog from './components/Backlog/Backlog'
-import MyCalendar from './components/Calendar'
-import Header from './components/Header'
+import MyCalendar from './components/Calendar/Calendar'
+import Header from './components/Calendar/Header'
 import ModalButton from '../src/components/Modal/ModalButton'
 
 
