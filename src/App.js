@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Backlog from './components/Backlog'
-import Calendar from './components/Calendar'
+import MyCalendar from './components/Calendar'
 import Header from './components/Header'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       </header>
       <body className='Grid-body'>
         <div className='Calendar'>
-          <Calendar />
+          <MyCalendar />
         </div>
         <div className='Backlog'>
           <Backlog />

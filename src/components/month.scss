@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import './variables';
 
 .rbc-row {
   display: flex;
@@ -23,7 +23,7 @@
   background-color: rgba(255, 255, 255, 0.3);
   z-index: $event-zindex;
   font-weight: bold;
-  font-size: 85%;
+  font-size: 45%;
   height: auto;
   line-height: normal;
 }
@@ -37,8 +37,9 @@
   width: 100%;
   user-select: none;
   -webkit-user-select: none;
-
-  height: 100%; // ie-fix
+  background-color: #282c34;
+  color: white;
+  height: 40em; // ie-fix
 }
 
 .rbc-month-header {
@@ -66,6 +67,7 @@
   min-width: 0;
   padding-right: 5px;
   text-align: right;
+  //font-size: 18px;
 
   &.rbc-now {
     font-weight: bold;
